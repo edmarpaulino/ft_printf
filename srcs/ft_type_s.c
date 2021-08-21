@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:52:35 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/20 18:20:39 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/21 13:21:39 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ int	ft_type_s(va_list	ap)
 	len = ft_strlen(str);
 	return (len);
 }
-

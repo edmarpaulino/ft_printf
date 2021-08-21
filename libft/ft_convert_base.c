@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 17:43:52 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/20 18:36:55 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/21 12:41:15 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_convert_base(size_t	nbr, char	*base)
 	if (nbr == 0)
 		return (ft_strdup("0"));
 	base_len = ft_strlen(base);
-	size = ft_unbrlen(nbr, base_len);
+	size = ft_nbrlen(nbr, base_len);
 	convert = (char *)malloc((size + 1) * sizeof(*base));
 	if (!convert)
 		return (NULL);

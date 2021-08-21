@@ -6,12 +6,12 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:49:40 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/20 18:36:43 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/21 13:24:42 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_H
-# define FT_LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,8 +32,7 @@ size_t	ft_strlen(char	*str);
 size_t	ft_strnlen(char	*str, size_t	n);
 void	ft_putchar(int	c);
 void	ft_putstr(char	*str);
-int		ft_nbrlen(ssize_t	n, int	base);
-int		ft_unbrlen(size_t	n, int	base);
+int		ft_nbrlen(size_t	n, size_t	base);
 char	*ft_itoa(int	n);
 char	*ft_uitoa(unsigned int	un);
 char	*ft_strdup(const char	*str);

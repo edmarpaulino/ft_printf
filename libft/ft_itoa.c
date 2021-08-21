@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:23:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/20 17:47:32 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/21 13:23:01 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_convert(int	n, char	*str)
 char	*ft_itoa(int	n)
 {
 	char	*str;
-	
+
 	str = 0;
 	if (n < INT_MIN || n > INT_MAX)
 		return (NULL);

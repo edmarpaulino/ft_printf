@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:23:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/20 17:47:48 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/21 13:22:40 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_convert_u(unsigned int	un, char	*str)
 char	*ft_uitoa(unsigned int	un)
 {
 	char	*str;
-	
+
 	str = 0;
 	if (un < 0 || un > UINT_MAX)
 		return (NULL);
