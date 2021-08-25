@@ -1,3 +1,7 @@
 *.o
 *.a
+*.out
+*.txt
 *main.c
+*.gitignore
+*ester

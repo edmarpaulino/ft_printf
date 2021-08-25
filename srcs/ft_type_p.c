@@ -6,27 +6,22 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:15:03 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/21 13:30:34 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/25 17:37:36 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_type_p(va_list	ap)
+int	ft_type_p(size_t	p)
 {
-	size_t	ptr;
 	int		len;
 	char	*addr;
 
-	ptr = va_arg(ap, size_t);
-	len = 0;
-	addr = ft_convert_base(ptr, LOWER_HEX);
-	if (addr)
-	{
-		ft_putstr("0x");
-		ft_putstr(addr);
-		len = (ft_strlen(addr) + 2);
-		free(addr);
-	}
+	addr = ft_convert_base(p, LOWER_HEX);
+	if (!addr)
+		return (0);
+	len = write(1, "0x", 2);
+	len += write(1, addr, ft_strlen(addr));
+	free(addr);
 	return (len);
 }

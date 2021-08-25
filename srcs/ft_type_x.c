@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   ft_type_x.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 19:46:47 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/19 20:42:21 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/20 17:35:26 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/08/25 18:29:34 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
-size_t	ft_strnlen(char	*str, size_t	n)
+int	ft_type_x(unsigned int	x, char	*base)
 {
-	size_t	len;
+	int		len;
+	char	*hex;
 
-	len = 0;
-	if (!str || !n)
-		return (len);
-	while (str[len] && len < n)
-		++len;
+	hex = ft_convert_base(x, base);
+	if (!hex)
+		return (0);
+	len = write(1, hex, ft_strlen(hex));
+	free(hex);
 	return (len);
 }

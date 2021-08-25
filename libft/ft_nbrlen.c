@@ -6,20 +6,22 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:22:07 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/21 12:37:54 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/25 18:29:10 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
-int	ft_nbrlen(size_t	n, size_t	base)
+int	ft_nbrlen(size_t	nbr, size_t	base)
 {
 	int	len;
 
 	len = 0;
-	while (n)
+	if (nbr == 0)
+		return (1);
+	while (nbr)
 	{
-		n /= base;
+		nbr /= base;
 		++len;
 	}
 	return (len);

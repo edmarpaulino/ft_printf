@@ -6,30 +6,23 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:05:06 by edpaulin          #+#    #+#              #
-#    Updated: 2021/08/21 12:38:26 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/08/25 18:22:46 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libftprintf.a
 
 SRC				=	srcs/ft_printf.c \
-					srcs/ft_vprintf.c \
 					srcs/ft_parser_type.c \
 					srcs/ft_type_c.c \
 					srcs/ft_type_s.c \
 					srcs/ft_type_p.c \
 					srcs/ft_type_d.c \
 					srcs/ft_type_u.c \
-					srcs/ft_type_x_lower.c \
-					srcs/ft_type_x_upper.c \
-					libft/ft_putchar.c \
+					srcs/ft_type_x.c \
 					libft/ft_strlen.c \
-					libft/ft_putstr.c \
 					libft/ft_nbrlen.c \
-					libft/ft_itoa.c \
 					libft/ft_uitoa.c \
-					libft/ft_strdup.c \
-					libft/ft_strlcpy.c \
 					libft/ft_convert_base.c
 SRC_BONUS		=	
 OBJ				=	$(SRC:.c=.o)
