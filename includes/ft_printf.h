@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 09:05:36 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/25 18:29:31 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/25 19:34:58 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,27 @@
 
 # define UPPER_HEX	"0123456789ABCDEF"
 # define LOWER_HEX	"0123456789abcdef"
+# define TYPES	"cspdiuxX%"
+# define FLAGS	"-0.# +"
+# define DIGITS	"0123456789"
+# define LEFT	'-'
+# define PAD	'0'
+# define PRECISION	'.'
+# define ALTERNATE	'#'
+# define SPACE	' '
+# define PLUS	'+'
+
+typedef struct s_flag
+{
+	char	left;
+	char	pad;
+	int		pad_size;
+	char	precision;
+	int		precision_size;
+	char	alter;
+	char	space;
+	char	plus;
+}				t_flag;
 
 int	ft_printf(const char	*format, ...);
 int	ft_vprintf(va_list	ap, char	*format);
