@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 19:28:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 09:09:06 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/26 16:31:22 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/08/26 17:07:48 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_strchr(char	*str, char	c)
+int	ft_putnchar(int	c, int	n)
 {
-	while (*str)
-	{
-		if (*str == c)
-			return (TRUE);
-		++str;
-	}
-	return (FALSE);
+	int	len;
+
+	len = 0;
+	while (--n > 0)
+		len += write(1, &c, 1);
+	return (len);
 }

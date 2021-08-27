@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 19:28:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 09:09:06 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/20 14:23:19 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/08/27 16:39:26 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
-int	ft_strchr(char	*str, char	c)
+char	*ft_itoa(int	n)
 {
-	while (*str)
+	char	*str;
+	int		len;
+
+	len = (ft_nbrlen(n, 10) + 1);
+	str = (char *)malloc(len * sizeof(*str));
+	if (!str)
+		return (NULL);
+	str[--len] = '\0';
+	while (--len >= 0)
 	{
-		if (*str == c)
-			return (TRUE);
-		++str;
+		str[len] = (n % 10) + '0';
+		n /= 10;
 	}
-	return (FALSE);
+	return (str);
 }

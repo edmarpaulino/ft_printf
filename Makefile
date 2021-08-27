@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:05:06 by edpaulin          #+#    #+#              #
-#    Updated: 2021/08/25 18:49:34 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/08/27 16:51:00 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,19 @@ SRC				=	srcs/ft_printf.c \
 					srcs/ft_type_d.c \
 					srcs/ft_type_u.c \
 					srcs/ft_type_x.c \
+					srcs/ft_parser_flag.c \
+					srcs/ft_print_alter.c \
 					libft/ft_strlen.c \
 					libft/ft_nbrlen.c \
 					libft/ft_uitoa.c \
-					libft/ft_convert_base.c
+					libft/ft_convert_base.c \
+					libft/ft_strchr.c \
+					libft/ft_skip_atoi.c \
+					libft/ft_strcmp.c \
+					libft/ft_putnchar.c \
+					libft/ft_isdigit.c \
+					libft/ft_strjoin.c \
+					libft/ft_strlcpy.c
 SRC_BONUS		=	
 OBJ				=	$(SRC:.c=.o)
 OBJ_BONUS		=	$(SRC_BONUS:.c=.o)

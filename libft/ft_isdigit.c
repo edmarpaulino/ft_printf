@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 19:28:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 09:09:06 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/27 14:55:19 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/08/27 14:56:03 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_strchr(char	*str, char	c)
+int	ft_isdigit(int	c)
 {
-	while (*str)
-	{
-		if (*str == c)
-			return (TRUE);
-		++str;
-	}
-	return (FALSE);
+	return (c >= '0' && c <= '9');
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_skip_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 19:28:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 09:09:06 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/26 08:41:43 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/08/26 09:08:22 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_strchr(char	*str, char	c)
+int	ft_skip_atoi(char	**str)
 {
-	while (*str)
+	int	n;
+
+	n = 0;
+	while (ft_strchr(DIGITS, **str))
 	{
-		if (*str == c)
-			return (TRUE);
-		++str;
+		n = (n * 10) + (**str - '0');
+		++(*str);
 	}
-	return (FALSE);
+	return (n);
 }

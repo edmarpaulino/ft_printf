@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 19:21:06 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/25 20:00:49 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/27 16:24:37 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 //	CAPTURE THE FLAG
 
-void	ft_init_flags(t_flag	*flag) // not prototyped
+void	ft_init_flags(t_flag	*flag)
 {
 	flag->left = FALSE;
+	flag->left_size = 0;
 	flag->pad = FALSE;
 	flag->pad_size = 0;
 	flag->precision = FALSE;
@@ -26,39 +27,39 @@ void	ft_init_flags(t_flag	*flag) // not prototyped
 	flag->plus = FALSE;
 }
 
-/*
-	ft_check_flag
-	check if the condition is valid, if is not then returns error
-	if  ft_check_flag returns erro the fmt return to the initial
-	fmt position minus 1 (% position = start) and returns error too.
-*/
-
-int	ft_check_flag(char	current, t_flag	flag) // not prototyped
+void	ft_get_size(char	*flag, int	*flag_size, char	**format)
 {
-	return (ERROR);
+	*flag = TRUE;
+	++(*format);
+	*flag_size = ft_skip_atoi(format);
+	--(*format);
 }
 
-int	ft_parser_flag(va_list	ap, char	**fmt) // not prototyped
+int	ft_parser_flag(va_list	ap, char	**format)
 {
 	t_flag	flag;
-	char	*start;
 
-	start = (*fmt - 1);
 	ft_init_flags(&flag);
-	while (ft_strchr(FLAGS, **fmt) || ft_strchr(DIGITS, **fmt))
+	while (ft_strchr(FLAGS, **format) || ft_isdigit(**format))
 	{
-		if (**fmt == LEFT)
-			flag.left = TRUE;
-		else if (**fmt == PAD)
-			flag.pad = TRUE;
-		else if (**fmt == PRECISION)
-			flag.precision = TRUE;
-		else if (**fmt == ALTERNATE)
+		if (**format == LEFT)
+			ft_get_size(&flag.left, &flag.left_size, format);
+		else if (ft_isdigit(**format))
+		{
+			if (**format == PAD)
+				flag.pad = TRUE;
+			flag.pad_size = ft_skip_atoi(format);
+			--(*format);
+		}
+		else if (**format == PRECISION)
+			ft_get_size(&flag.precision, &flag.precision_size, format);
+		else if (**format == ALTERNATE)
 			flag.alter = TRUE;
-		else if (**fmt == SPACE)
+		else if (**format == SPACE)
 			flag.space = TRUE;
-		else if (**fmt == PLUS)
+		else if (**format == PLUS)
 			flag.plus = TRUE;
-		++(*fmt);
+		++(*format);
 	}
+	return (ft_parser_type(ap, **format, &flag));
 }
