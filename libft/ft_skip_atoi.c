@@ -6,13 +6,13 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 08:41:43 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 09:08:22 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 10:43:25 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_skip_atoi(char	**str)
+int	ft_skip_atoi(char **str)
 {
 	int	n;
 

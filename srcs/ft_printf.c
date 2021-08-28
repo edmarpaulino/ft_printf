@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 09:05:45 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/27 16:24:44 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 12:06:01 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 	format to the end.
 */
 
-int	ft_check_error(char	*start, char	**format, int	len)
+int	ft_check_error(char *start, char **format, int len)
 {
 	if (len == ERROR)
 	{
@@ -29,7 +29,7 @@ int	ft_check_error(char	*start, char	**format, int	len)
 	return (len);
 }
 
-int	ft_vprintf(va_list	ap, char	*format)
+int	ft_vprintf(va_list ap, char *format)
 {
 	int		len;
 	char	*start;
@@ -50,7 +50,7 @@ int	ft_vprintf(va_list	ap, char	*format)
 	return (len);
 }
 
-int	ft_printf(const char	*format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		len;

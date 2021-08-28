@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:05:06 by edpaulin          #+#    #+#              #
-#    Updated: 2021/08/27 16:51:00 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/08/28 12:05:40 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC				=	srcs/ft_printf.c \
 					srcs/ft_type_u.c \
 					srcs/ft_type_x.c \
 					srcs/ft_parser_flag.c \
-					srcs/ft_print_alter.c \
+					srcs/ft_format.c \
 					libft/ft_strlen.c \
 					libft/ft_nbrlen.c \
 					libft/ft_uitoa.c \

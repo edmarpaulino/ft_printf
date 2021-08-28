@@ -6,35 +6,32 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:15:03 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/27 15:52:42 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 12:05:35 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_type_p(size_t	p, t_flag	*flag)
+int	ft_type_p(size_t p, t_flag *flag, t_format	*fmt)
 {
-	int		len;
-	char	*addr;
-
-	len = 0;
-	addr = ft_convert_base(p, LOWER_HEX);
-	if (!addr)
+	fmt->tmp = ft_convert_base(p, LOWER_HEX);
+	if (!fmt->tmp)
 		return (FALSE);
-	if (flag->left == TRUE)
+	fmt->str = ft_strjoin("0x", fmt->tmp);
+	free(fmt->tmp);
+	fmt->str_len = ft_strlen(fmt->str);
+	if (flag->left == FALSE)
 	{
-		len = ft_print_alter(addr, LOWER_HEX);
-		len += ft_putnchar(SPACE, (--flag->left_size - ft_strlen(addr)));
-		free(addr);
-		return (len);
+		if (flag->width > 0)
+			fmt->len += ft_putnchar(SPACE, (flag->width - fmt->str_len));
+		ft_signal(flag, fmt);
+		fmt->len += write(1, fmt->str, fmt->str_len);
 	}
-	if (flag->pad_size > 0)
-		len = ft_putnchar(SPACE, (--flag->pad_size - ft_strlen(addr)));
-	else if (flag->plus == TRUE)
-		len = write(1, "+", 1);
-	else if (flag->space == TRUE)
-		len = write(1, " ", 1);
-	len += ft_print_alter(addr, LOWER_HEX);
-	free(addr);
-	return (len);
+	else
+	{
+		fmt->len += write(1, fmt->str, fmt->str_len);
+		fmt->len += ft_putnchar(SPACE, (flag->width - fmt->str_len));
+	}
+	free(fmt->str);
+	return (fmt->len);
 }

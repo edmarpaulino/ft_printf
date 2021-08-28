@@ -6,13 +6,13 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:55:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/27 14:56:03 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 10:43:44 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_isdigit(int	c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

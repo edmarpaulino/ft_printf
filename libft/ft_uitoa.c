@@ -6,13 +6,13 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:23:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/25 18:00:19 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 10:35:33 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_uitoa(unsigned int	un)
+char	*ft_uitoa(unsigned int un)
 {
 	char	*str;
 	int		len;

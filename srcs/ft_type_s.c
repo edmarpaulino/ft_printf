@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_type_ss                                        :+:      :+:    :+:   */
+/*   ft_type_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:52:35 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/26 16:39:54 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/28 12:05:45 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_type_s(char	*s, t_flag	*flag)
+int	ft_type_s(char *s, t_flag *flag, t_format *fmt)
 {
-	int	len;
 	int	s_len;
 
 	if (!s)
 		s = "(null)";
 	s_len = ft_strlen(s);
-	if (flag->precision == TRUE && flag->precision_size < s_len)
-		s_len = flag->precision_size;
+	if (flag->precision == TRUE && flag->size < s_len)
+		s_len = flag->size;
 	if (flag->left == TRUE)
 	{
-		len = write(1, s, s_len);
-		len += ft_putnchar(SPACE, (flag->left_size - s_len + 1));
+		fmt->len += write(1, s, s_len);
+		fmt->len += ft_putnchar(SPACE, (flag->width - s_len));
 	}
-	else if (flag->pad == TRUE || flag->pad_size > 0)
+	else if (flag->pad == TRUE || flag->width > 0)
 	{
-		len = ft_putnchar(SPACE, (flag->pad_size - s_len + 1));
-		len += write(1, s, s_len);
+		fmt->len += ft_putnchar(SPACE, (flag->width - s_len));
+		fmt->len += write(1, s, s_len);
 	}
 	else
-		len = write(1, s, s_len);
-	return (len);
+		fmt->len += write(1, s, s_len);
+	return (fmt->len);
 }
