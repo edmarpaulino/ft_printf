@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:05:06 by edpaulin          #+#    #+#              #
-#    Updated: 2021/08/28 12:05:40 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/08/29 15:04:38 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,7 @@ SRC				=	srcs/ft_printf.c \
 					libft/ft_nbrlen.c \
 					libft/ft_uitoa.c \
 					libft/ft_convert_base.c \
-					libft/ft_strchr.c \
 					libft/ft_skip_atoi.c \
-					libft/ft_strcmp.c \
 					libft/ft_putnchar.c \
 					libft/ft_isdigit.c \
 					libft/ft_strjoin.c \

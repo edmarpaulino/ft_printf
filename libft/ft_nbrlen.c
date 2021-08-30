@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:22:07 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/28 10:43:39 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/29 14:59:03 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	ft_nbrlen(size_t nbr, size_t base)
 {
 	int	len;
 
-	len = 0;
-	if (nbr == 0)
+	if (!nbr)
 		return (1);
+	len = 0;
 	while (nbr)
 	{
 		nbr /= base;
