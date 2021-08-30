@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 11:52:27 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/30 11:16:56 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/30 13:53:40 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,29 +91,32 @@ void	ft_left_pad(t_format	*fmt)
 
 void	ft_zero_pad(t_format	*fmt)
 {
-	int	olokinho;
-	int	orleans;
+	int	sign_size;
+	int	aux;
+	int	test;
 
-	olokinho = 0;
-	orleans = 0;
+	sign_size = 0;
+	aux = 0;
+	test = 0;
 	if (fmt->pad == TRUE || fmt->precision == TRUE)
 	{
+		aux = fmt->width;
+		if (fmt->sign == TRUE || fmt->plus == TRUE || fmt->space == TRUE)
+			sign_size = 1;
+		if (fmt->size > 0)
+			sign_size = 0;
 		ft_precision(&fmt->width, fmt);
 		if (fmt->precision == TRUE)
 		{
-			if (fmt->size <= (int)fmt->str_len)
-				orleans = fmt->str_len;
+			if (fmt->size < (int)fmt->str_len)
+				aux = fmt->str_len;
 			else
-				orleans = fmt->size;
-			if (fmt->sign == TRUE || fmt->plus == TRUE || fmt->space == TRUE)
 			{
-				olokinho++;
-				fmt->len += ft_putnchar(SPACE, (fmt->width - orleans - olokinho));
-				if (orleans == (int)fmt->str_len)
-					olokinho--;
+				aux = fmt->size;
 			}
-			else
-				fmt->len += ft_putnchar(SPACE, (fmt->width - orleans));
+			if (sign_size == 0 && (fmt->sign == TRUE || fmt->plus == TRUE || fmt->space == TRUE))
+				test = 1;
+			fmt->len += ft_putnchar(SPACE, (fmt->width - aux - sign_size - test));
 		}
 		if (fmt->sign == TRUE)
 			fmt->len += write(1, "-", 1);
@@ -121,7 +124,7 @@ void	ft_zero_pad(t_format	*fmt)
 			fmt->len += write(1, "+", 1);
 		else if (fmt->space == TRUE)
 			fmt->len += write(1, " ", 1);
-		fmt->len += ft_putnchar(PAD, ((fmt->width + olokinho) - fmt->len - fmt->str_len));
+		fmt->len += ft_putnchar(PAD, (aux - sign_size - fmt->str_len));
 		if (fmt->str[0] == '0' && fmt->precision == TRUE && fmt->size == 0)
 			fmt->len += write(1, " ", 1);
 		else
