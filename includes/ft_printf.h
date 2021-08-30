@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 09:05:36 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/29 15:30:23 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/30 15:40:16 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		ft_check_flag(char *flags, int c);
 void	ft_get_size(char *flag, int *flag_size, char **format);
 int		ft_check_error(char *start, char **format, int len);
 void	ft_signal(t_format	*fmt);
+void	ft_print_signal(t_format *fmt);
 void	ft_alternate(char *base, t_format *fmt);
 void	ft_precision(int *current_size, t_format *fmt);
 void	ft_zero_pad(t_format *fmt);
