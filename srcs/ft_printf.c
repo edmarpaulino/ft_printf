@@ -6,17 +6,11 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 09:05:45 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/29 11:32:09 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/31 10:20:05 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-/*
-	ft_check_error receive ft_parser_flag and format, if is -1 so print all 
-	string from % and returns the number of printed characters, also skip the
-	format to the end.
-*/
 
 int	ft_check_error(char *start, char **format, int len)
 {

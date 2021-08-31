@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 19:21:06 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/29 16:02:43 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:14:58 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_init(t_format *fmt)
 {
 	fmt->str = NULL;
 	fmt->tmp = NULL;
-	fmt->sign = FALSE;
+	fmt->minus = FALSE;
 	fmt->left = FALSE;
 	fmt->pad = FALSE;
 	fmt->precision = FALSE;

@@ -6,11 +6,11 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:23:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/29 15:25:17 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/31 10:30:56 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 char	*ft_uitoa(unsigned int un)
 {

@@ -6,23 +6,20 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 14:18:06 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/08/30 18:22:07 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/08/30 19:27:31 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_type_d(int d, t_format	*fmt)
+int	ft_type_d(int d, t_format *fmt)
 {
 	if (fmt->precision == TRUE && fmt->size == 0 && d == 0 && fmt->width == 0)
-	{
-		ft_print_signal(fmt);
-		return (fmt->len);
-	}
+		return (ft_print_signal(fmt));
 	if (d < 0)
 	{
 		fmt->str = ft_uitoa(-(long)d);
-		fmt->sign = TRUE;
+		fmt->minus = TRUE;
 	}
 	else
 		fmt->str = ft_uitoa(d);
