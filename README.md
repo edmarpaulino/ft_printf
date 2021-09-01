@@ -80,8 +80,8 @@ The project
 ### Functions from "ft_printf"
 
 - [`ft_printf`](srcs/ft_printf.c)	- print a formatted string
-- [`ft_vprintf`](srcs/ft_vprintf.c)	- print the string and if it finds a % handles it
-- [`ft_check_error`](srcs/ft_vprintf.c)	- if an error occurs prints the rest of the string from the % that the error occurs
+- [`ft_vprintf`](srcs/ft_printf.c)	- print the string and if it finds a % handles it
+- [`ft_check_error`](srcs/ft_printf.c)	- if an error occurs prints the rest of the string from the % that the error occurs
 - [`ft_parser_type`](srcs/ft_parser_type.c)	- designates which treatment the data will receive from the given type
 - [`ft_type_c`](srcs/ft_type_c.c)	- character handling
 - [`ft_type_s`](srcs/ft_type_s.c)	- string handling
@@ -90,7 +90,7 @@ The project
 - [`ft_type_u`](srcs/ft_type_u.c)	- unsigned decimal base 10 handling
 - [`ft_type_x`](srcs/ft_type_x.c)	- hexadecimal lowercase and uppercase handling
 - [`ft_parser_flag`](srcs/ft_parser_flag.c)	- capture the flags
-- [`ft_isflag`](srcs/ft_parser_flag.c)	- checks for a flag (-0.# +).
+- [`ft_ft_check_flag`](srcs/ft_parser_flag.c)	- checks for a flag (-0.# +).
 - [`ft_print_signal`](srcs/ft_format.c)	- print the number signal
 - [`ft_precision`](srcs/ft_format.c)	- precision flag handling
 - [`ft_init`](srcs/ft_parser_flag.c)	- initialize the structure
