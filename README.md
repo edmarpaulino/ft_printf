@@ -62,8 +62,8 @@ The project
 
 ### Header files
 
-- [`libft.h`](libft.h)
-- [`ft_printf.h`](ft_printf.h)
+- [`libft.h`](includes/libft.h)
+- [`ft_printf.h`](includes/ft_printf.h)
 
 ### Functions from "libft.h"
 
